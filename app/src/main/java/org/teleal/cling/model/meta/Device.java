@@ -172,17 +172,17 @@ public abstract class Device<DI extends DeviceIdentity, D extends Device, S exte
 	}
 
 	public D[] findEmbeddedDevices() {
-		Collection<D> devices = findEmbeddedDevices(this);
+		Collection<D> devices = findEmbeddedDevices((D) this);
 		return toDeviceArray(devices);
 	}
 
 	public D[] findDevices(DeviceType deviceType) {
-		Collection<D> devices = find(deviceType, this);
+		Collection<D> devices = find(deviceType, (D) this);
 		return toDeviceArray(devices);
 	}
 
 	public D[] findDevices(ServiceType serviceType) {
-		Collection<D> devices = find(serviceType, this);
+		Collection<D> devices = find(serviceType, (D) this);
 		return toDeviceArray(devices);
 	}
 
@@ -200,12 +200,12 @@ public abstract class Device<DI extends DeviceIdentity, D extends Device, S exte
 	}
 
 	public S[] findServices() {
-		Collection<S> services = findServices(null, null, this);
+		Collection<S> services = findServices(null, null, (D) this);
 		return toServiceArray(services);
 	}
 
 	public S[] findServices(ServiceType serviceType) {
-		Collection<S> services = findServices(serviceType, null, this);
+		Collection<S> services = findServices(serviceType, null, (D) this);
 		return toServiceArray(services);
 	}
 
@@ -286,7 +286,7 @@ public abstract class Device<DI extends DeviceIdentity, D extends Device, S exte
 	}
 
 	public S findService(ServiceId serviceId) {
-		Collection<S> collectionFindServices = findServices(null, serviceId, this);
+		Collection<S> collectionFindServices = findServices(null, serviceId, (D) this);
 		if (collectionFindServices.size() == 1) {
 			return collectionFindServices.iterator().next();
 		}
@@ -294,7 +294,7 @@ public abstract class Device<DI extends DeviceIdentity, D extends Device, S exte
 	}
 
 	public S findService(ServiceType serviceType) {
-		Collection<S> collectionFindServices = findServices(serviceType, null, this);
+		Collection<S> collectionFindServices = findServices(serviceType, null, (D) this);
 		if (collectionFindServices.size() > 0) {
 			return collectionFindServices.iterator().next();
 		}
@@ -302,7 +302,7 @@ public abstract class Device<DI extends DeviceIdentity, D extends Device, S exte
 	}
 
 	public ServiceType[] findServiceTypes() {
-		Collection<S> collectionFindServices = findServices(null, null, this);
+		Collection<S> collectionFindServices = findServices(null, null, (D) this);
 		HashSet hashSet = new HashSet();
 		Iterator<S> it = collectionFindServices.iterator();
 		while (it.hasNext()) {

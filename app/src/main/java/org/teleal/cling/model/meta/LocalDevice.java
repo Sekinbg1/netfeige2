@@ -212,5 +212,20 @@ public class LocalDevice extends Device<DeviceIdentity, LocalDevice, LocalServic
 	public LocalDevice findDevice(UDN udn) {
 		return find(udn, this);
 	}
+
+	@Override // org.teleal.cling.model.meta.Device
+	public LocalDevice[] toDeviceArray(Collection<LocalDevice> collection) {
+		return collection != null ? (LocalDevice[]) collection.toArray(new LocalDevice[collection.size()]) : new LocalDevice[0];
+	}
+
+	@Override // org.teleal.cling.model.meta.Device
+	public LocalService[] toServiceArray(Collection<LocalService> collection) {
+		return collection != null ? (LocalService[]) collection.toArray(new LocalService[collection.size()]) : new LocalService[0];
+	}
+
+	@Override // org.teleal.cling.model.meta.Device
+	public LocalService newInstance(ServiceType serviceType, ServiceId serviceId, URI uri, URI uri2, URI uri3, Action<LocalService>[] actionArr, StateVariable<LocalService>[] stateVariableArr) throws ValidationException {
+		return new LocalService(serviceType, serviceId, actionArr, stateVariableArr);
+	}
 }
 

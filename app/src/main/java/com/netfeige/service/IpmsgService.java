@@ -520,7 +520,7 @@ public class IpmsgService extends Service implements IFileTransNotify {
 	public boolean processFile(HostInformation hostInformation, Vector<FileInformation> vector, boolean z, boolean z2) {
 		DiscussInfo discussInfo;
 		boolean zRecvFile;
-		ArrayList<MsgRecord> arrayList;
+		ArrayList<MsgRecord> arrayList = null;
 		boolean zRecvFile2;
 		Vector<FileInformation> vector2 = vector;
 		HostInformation hostInfo = getHostInfo(hostInformation.strMacAddr);
@@ -623,9 +623,11 @@ public class IpmsgService extends Service implements IFileTransNotify {
 				arrayList2 = arrayList;
 				vector2 = vector;
 			}
-			arrayList = arrayList2;
+			arrayList = (arrayList2 != null) ? arrayList2 : arrayList;
 			i++;
-			arrayList2 = arrayList;
+			if (arrayList2 == null) {
+				arrayList2 = arrayList;
+			}
 			vector2 = vector;
 		}
 		return true;
@@ -855,4 +857,3 @@ public class IpmsgService extends Service implements IFileTransNotify {
 		}
 	}
 }
-

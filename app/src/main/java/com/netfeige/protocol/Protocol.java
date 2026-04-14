@@ -822,7 +822,7 @@ public class Protocol implements IProtocol {
 					byte[] bArrEncryptString = SimpleCrypto.encryptString(Protocol.this.m_strContext);
 					ByteBuffer byteBufferAllocate = ByteBuffer.allocate(bArrEncryptString.length + 17);
 					byteBufferAllocate.order(ByteOrder.LITTLE_ENDIAN);
-					byteBufferAllocate.put(dn.l);
+					byteBufferAllocate.put((byte) 0); // Protocol version or type marker
 					byteBufferAllocate.putInt(1000005);
 					byteBufferAllocate.putInt(8001);
 					byteBufferAllocate.putInt(1);

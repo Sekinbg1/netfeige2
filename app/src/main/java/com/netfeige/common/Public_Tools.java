@@ -638,10 +638,9 @@ public class Public_Tools {
 				}
 			} catch (Exception e3) {
 				e3.printStackTrace();
-				inputStreamOpenRawResource.close();
-				return bArr2;
+				// inputStreamOpenRawResource already closed
 			}
-		} catch (IOException e4) {
+		} catch (Throwable e4) {
 			e4.printStackTrace();
 		}
 	}
@@ -659,14 +658,13 @@ public class Public_Tools {
 				try {
 					bArr2 = new byte[inputStreamOpenRawResource.available()];
 					inputStreamOpenRawResource.read(bArr2);
-					inputStreamOpenRawResource.close();
 					try {
 						inputStreamOpenRawResource.close();
-						return bArr2;
 					} catch (IOException e) {
 						e.printStackTrace();
-						return bArr2;
 					}
+					if (bArr2 == null) { bArr2 = new byte[0]; }
+					return bArr2;
 				} catch (Exception e2) {
 					e2.printStackTrace();
 					try {
@@ -674,24 +672,28 @@ public class Public_Tools {
 					} catch (IOException e3) {
 						e3.printStackTrace();
 					}
+					if (bArr2 == null) { bArr2 = new byte[0]; }
 					return bArr2;
 				} catch (Throwable th2) {
-					inputStreamOpenRawResource.close();
+					try {
+						inputStreamOpenRawResource.close();
+					} catch (IOException e4) {
+						e4.printStackTrace();
+					}
 					throw th2;
 				}
 			} catch (Throwable th3) {
 				if (inputStream != null) {
 					try {
 						inputStream.close();
-					} catch (IOException e4) {
-						e4.printStackTrace();
+					} catch (IOException e5) {
+						e5.printStackTrace();
 					}
 				}
 				throw th3;
 			}
-			return bArr2;
-		} catch (Exception e5) {
-			e5.printStackTrace();
+		} catch (Exception e6) {
+			e6.printStackTrace();
 			return null;
 		}
 	}
@@ -722,6 +724,8 @@ public class Public_Tools {
 		try {
 			return new File(getDefaultDownloadPath()).getUsableSpace();
 		} catch (Exception unused) {
+			return 0L;
+		} catch (Throwable th) {
 			return 0L;
 		}
 	}
@@ -1198,13 +1202,17 @@ public class Public_Tools {
 						}
 						throw th;
 					}
-				} catch (IOException e3) {
+				} catch (Exception e3) {
 					e3.printStackTrace();
 				}
-			} catch (IOException e4) {
+			} catch (Exception e4) {
 				e4.printStackTrace();
 				if (fileInputStream != null) {
-					fileInputStream.close();
+					try {
+						fileInputStream.close();
+					} catch (IOException e5) {
+						e5.printStackTrace();
+					}
 				}
 				return bitmapDecodeFileDescriptor;
 			}
@@ -1551,4 +1559,3 @@ public class Public_Tools {
 		return className.equals(str);
 	}
 }
-

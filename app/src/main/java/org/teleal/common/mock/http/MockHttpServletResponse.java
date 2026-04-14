@@ -187,7 +187,8 @@ public class MockHttpServletResponse implements HttpServletResponse {
     }
 
     public Cookie getCookie(String str) {
-        for (Cookie cookie : this.cookies) {
+        for (Object obj : this.cookies) {
+            Cookie cookie = (Cookie) obj;
             if (str.equals(cookie.getName())) {
                 return cookie;
             }
@@ -203,10 +204,10 @@ public class MockHttpServletResponse implements HttpServletResponse {
         return this.headers.keySet();
     }
 
-    public Object getHeader(String str) {
+    public String getHeader(String str) {
         HeaderValueHolder byName = HeaderValueHolder.getByName(this.headers, str);
         if (byName != null) {
-            return byName.getValue();
+            return (String) byName.getValue();
         }
         return null;
     }
@@ -385,6 +386,11 @@ public class MockHttpServletResponse implements HttpServletResponse {
             super.flush();
             MockHttpServletResponse.this.setCommitted(true);
         }
+    }
+
+    @Override
+    public void setContentLengthLong(long len) {
+        this.contentLength = (int) len;
     }
 }
 

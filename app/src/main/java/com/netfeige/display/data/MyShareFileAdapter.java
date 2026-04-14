@@ -147,10 +147,16 @@ public class MyShareFileAdapter extends BaseAdapter {
 		((TextView) view.findViewById(R.id.name_text_fileItem)).setMaxWidth(Public_Tools.dip2px(this.m_context, this.m_nFolderMaxWitch));
 		File[] fileArrListFiles = new File(shareFiles.getM_strPath()).listFiles();
 		((TextView) view.findViewById(R.id.count_text_fileItem)).setText("(" + (fileArrListFiles != null ? fileArrListFiles.length : 0) + ")");
-		if (Public_Tools.getDefaultDownloadPath().endsWith(shareFiles.getM_strPath())) {
-			((ImageView) view.findViewById(R.id.file_img_fileItem)).setImageBitmap(null);
-			((ImageView) view.findViewById(R.id.file_img_fileItem)).setBackgroundResource(R.drawable.filer_feige);
-		} else {
+		try {
+			if (Public_Tools.getDefaultDownloadPath().endsWith(shareFiles.getM_strPath())) {
+				((ImageView) view.findViewById(R.id.file_img_fileItem)).setImageBitmap(null);
+				((ImageView) view.findViewById(R.id.file_img_fileItem)).setBackgroundResource(R.drawable.filer_feige);
+			} else {
+				((ImageView) view.findViewById(R.id.file_img_fileItem)).setImageBitmap(null);
+				((ImageView) view.findViewById(R.id.file_img_fileItem)).setBackgroundResource(R.drawable.folder_icon);
+			}
+		} catch (Throwable e) {
+			e.printStackTrace();
 			((ImageView) view.findViewById(R.id.file_img_fileItem)).setImageBitmap(null);
 			((ImageView) view.findViewById(R.id.file_img_fileItem)).setBackgroundResource(R.drawable.folder_icon);
 		}
@@ -218,4 +224,3 @@ public class MyShareFileAdapter extends BaseAdapter {
 		}
 	}
 }
-

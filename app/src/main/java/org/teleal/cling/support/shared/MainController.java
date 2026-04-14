@@ -18,29 +18,4 @@ public class MainController<V extends View> extends AbstractController<V> {
 
 	private void initialize() {
 	}
-
-	@Override
-	public void preActionExecute() {
-		super.preActionExecute();
-	}
-
-	@Override
-	public void postActionExecute() {
-		super.postActionExecute();
-	}
-
-	@Override
-	public void failedActionExecute() {
-		super.failedActionExecute();
-	}
-
-	@Override
-	public void finalActionExecute() {
-		super.finalActionExecute();
-	}
-
-	@Override
-	public void dispose() {
-		super.dispose();
-	}
 }

@@ -11,51 +11,49 @@ import org.teleal.cling.support.shared.AbstractMap;
 
 /* JADX INFO: loaded from: classes.dex */
 public class EventedValueChannelVolume extends EventedValue<ChannelVolume> {
-    @Override // org.teleal.cling.support.lastchange.EventedValue
-    protected Datatype getDatatype() {
-        return null;
-    }
+	// Constants for XML attributes
+	static class a {
+		static final String c = "channel";
+	}
 
-    @Override // org.teleal.cling.support.lastchange.EventedValue
-    protected /* bridge */ /* synthetic */ ChannelVolume valueOf(Map.Entry[] entryArr) throws InvalidValueException {
-        return valueOf2((Map.Entry<String, String>[]) entryArr);
-    }
+	@Override // org.teleal.cling.support.lastchange.EventedValue
+	protected Datatype getDatatype() {
+		return null;
+	}
 
-    public EventedValueChannelVolume(ChannelVolume channelVolume) {
-        super(channelVolume);
-    }
+	public EventedValueChannelVolume(ChannelVolume channelVolume) {
+		super(channelVolume);
+	}
 
-    public EventedValueChannelVolume(Map.Entry<String, String>[] entryArr) {
-        super(entryArr);
-    }
+	public EventedValueChannelVolume(Map.Entry<String, String>[] entryArr) {
+		super(entryArr);
+	}
 
-    @Override // org.teleal.cling.support.lastchange.EventedValue
-    /* JADX INFO: renamed from: valueOf, reason: avoid collision after fix types in other method */
-    protected ChannelVolume valueOf2(Map.Entry<String, String>[] entryArr) throws InvalidValueException {
-        Channel channelValueOf = null;
-        Integer numValueOf = null;
-        for (Map.Entry<String, String> entry : entryArr) {
-            if (entry.getKey().equals(a.c)) {
-                channelValueOf = Channel.valueOf(entry.getValue());
-            }
-            if (entry.getKey().equals("val")) {
-                numValueOf = Integer.valueOf(new UnsignedIntegerTwoBytesDatatype().valueOf(entry.getValue()).getValue().intValue());
-            }
-        }
-        if (channelValueOf == null || numValueOf == null) {
-            return null;
-        }
-        return new ChannelVolume(channelValueOf, numValueOf);
-    }
+	@Override // org.teleal.cling.support.lastchange.EventedValue
+	protected ChannelVolume valueOf(Map.Entry<String, String>[] entryArr) throws InvalidValueException {
+		Channel channelValueOf = null;
+		Integer numValueOf = null;
+		for (Map.Entry<String, String> entry : entryArr) {
+			if (entry.getKey().equals(a.c)) {
+				channelValueOf = Channel.valueOf(entry.getValue());
+			}
+			if (entry.getKey().equals("val")) {
+				numValueOf = Integer.valueOf(new UnsignedIntegerTwoBytesDatatype().valueOf(entry.getValue()).getValue().intValue());
+			}
+		}
+		if (channelValueOf == null || numValueOf == null) {
+			return null;
+		}
+		return new ChannelVolume(channelValueOf, numValueOf);
+	}
 
-    @Override // org.teleal.cling.support.lastchange.EventedValue
-    public Map.Entry<String, String>[] getAttributes() {
-        return new Map.Entry[]{new AbstractMap.SimpleEntry("val", new UnsignedIntegerTwoBytesDatatype().getString(new UnsignedIntegerTwoBytes(getValue().getVolume().intValue()))), new AbstractMap.SimpleEntry(a.c, getValue().getChannel().name())};
-    }
+	@Override // org.teleal.cling.support.lastchange.EventedValue
+	public Map.Entry<String, String>[] getAttributes() {
+		return new Map.Entry[]{new AbstractMap.SimpleEntry("val", new UnsignedIntegerTwoBytesDatatype().getString(new UnsignedIntegerTwoBytes(getValue().getVolume().intValue()))), new AbstractMap.SimpleEntry(a.c, getValue().getChannel().name())};
+	}
 
-    @Override // org.teleal.cling.support.lastchange.EventedValue
-    public String toString() {
-        return getValue().toString();
-    }
+	@Override // org.teleal.cling.support.lastchange.EventedValue
+	public String toString() {
+		return getValue().toString();
+	}
 }
-

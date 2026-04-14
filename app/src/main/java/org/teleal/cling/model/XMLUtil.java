@@ -65,13 +65,14 @@ public class XMLUtil {
                 sb.append(str);
                 sb.append("\"");
             }
-            for (Map.Entry entry : map.entrySet()) {
+            for (Object obj : map.entrySet()) {
+            Map.Entry entry = (Map.Entry) obj;
                 sb.append(" xmlns:");
                 sb.append((String) entry.getKey());
                 sb.append("=\"");
                 sb.append((String) entry.getValue());
                 sb.append("\"");
-                set.add(entry.getKey());
+                set.add((String) entry.getKey());
             }
             NodeList childNodes = element.getChildNodes();
             int i2 = 0;

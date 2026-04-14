@@ -60,7 +60,7 @@ public class StreamClientImpl implements StreamClient {
 	}
 
 	@Override // org.teleal.cling.transport.spi.StreamClient
-	public StreamResponseMessage sendRequest(StreamRequestMessage request) throws Exception {
+	public StreamResponseMessage sendRequest(StreamRequestMessage request) {
 		// Stub implementation - original code uses sun.net APIs
 		log.warning("sendRequest not fully supported on Android (sun.net unavailable)");
 		return null;

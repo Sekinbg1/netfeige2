@@ -44,7 +44,8 @@ class HeaderValueHolder {
 	}
 
 	public static HeaderValueHolder getByName(Map map, String str) {
-		for (String str2 : map.keySet()) {
+		for (Object key : map.keySet()) {
+                String str2 = (String) key;
 			if (str2.equalsIgnoreCase(str)) {
 				return (HeaderValueHolder) map.get(str2);
 			}

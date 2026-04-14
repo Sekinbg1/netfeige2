@@ -511,7 +511,7 @@ public class ChoiceListView extends ListView {
         int i = -1;
         for (int i2 = 0; i2 < getChildCount(); i2++) {
             getChildAt(i2).getLocationInWindow(iArr);
-            if (f >= iArr[0] && f <= r4.getWidth() + iArr[0] && f2 >= iArr[1] && f2 <= r4.getHeight() + iArr[1]) {
+            if (f >= iArr[0] && f <= this.getWidth() + iArr[0] && f2 >= iArr[1] && f2 <= this.getHeight() + iArr[1]) {
                 i = i2;
             }
         }

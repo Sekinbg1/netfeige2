@@ -200,7 +200,8 @@ public class TransFile implements Runnable {
 			if ((this.m_nMainFileInfo.nFileAttr & 1) != 0 && this.m_nMainFileInfo.startPos > 0) {
 				j3 = this.m_nMainFileInfo.startPos;
 				this.m_nFinishTotle = this.m_nMainFileInfo.startPos;
-				if (PlaybackStateCompat.ACTION_SET_REPEAT_MODE > fileInformation.size - this.m_nMainFileInfo.startPos) {
+				long maxChunkSize = 2147483647L; // Integer.MAX_VALUE as chunk size limit
+				if (maxChunkSize > fileInformation.size - this.m_nMainFileInfo.startPos) {
 					j2 = fileInformation.size - this.m_nMainFileInfo.startPos;
 				}
 				i = (int) j2;

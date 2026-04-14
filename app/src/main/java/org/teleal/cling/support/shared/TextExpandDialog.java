@@ -1,5 +1,11 @@
 package org.teleal.cling.support.shared;
 
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.OutputKeys;
+import java.io.StringWriter;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.Log;
@@ -48,7 +54,15 @@ public class TextExpandDialog {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(new InputSource(new StringReader(xml)));
-            return org.teleal.common.xml.Util.print(document, 2);
+            // XML formatting utility not available, return raw XML
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            DOMSource source = new DOMSource(document);
+            StringWriter writer = new StringWriter();
+            StreamResult result = new StreamResult(writer);
+            transformer.transform(source, result);
+            return writer.toString();
         } catch (Exception e) {
             Log.e(TAG, "Error formatting XML: " + e.toString());
             return xml;

@@ -6,23 +6,37 @@ import javax.servlet.ServletInputStream;
 
 /* JADX INFO: loaded from: classes.dex */
 public class DelegatingServletInputStream extends ServletInputStream {
-    private final InputStream sourceStream;
+	private final InputStream sourceStream;
 
-    public DelegatingServletInputStream(InputStream inputStream) {
-        this.sourceStream = inputStream;
-    }
+	public DelegatingServletInputStream(InputStream inputStream) {
+		this.sourceStream = inputStream;
+	}
 
-    public final InputStream getSourceStream() {
-        return this.sourceStream;
-    }
+	public final InputStream getSourceStream() {
+		return this.sourceStream;
+	}
 
-    public int read() throws IOException {
-        return this.sourceStream.read();
-    }
+	public int read() throws IOException {
+		return this.sourceStream.read();
+	}
 
-    public void close() throws IOException {
-        super.close();
-        this.sourceStream.close();
-    }
+	public void close() throws IOException {
+		super.close();
+		this.sourceStream.close();
+	}
+
+	@Override
+	public void setReadListener(javax.servlet.ReadListener readListener) {
+		// Stub implementation
+	}
+
+	@Override
+	public boolean isFinished() {
+		return false;
+	}
+
+	@Override
+	public boolean isReady() {
+		return true;
+	}
 }
-
