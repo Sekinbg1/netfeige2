@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="notification_action_color_filter">@color/secondary_text_default_material_light</color>
+	<color name="white">#FFFFFF</color>
+	<color name="gray">#808080</color>
+	<color name="lucency">#00000000</color>
+	<color name="black">#000000</color>
+	<color name="bg">#F5F5F5</color>
+	<color name="textcolor3">#666666</color>
+	<color name="blue">#2196F3</color>
+	<color name="drap_bar_word_color">#FFFFFF</color>
+	<color name="textcolor">#000000</color>
+	<color name="textcolor2">#808080</color>
+	<color name="update_blue">#2196F3</color>
+</resources>

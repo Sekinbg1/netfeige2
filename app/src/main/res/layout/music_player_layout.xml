@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootframeview"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/info_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/prepare_panel"
+            android:visibility="visible"
+            layout="@layout/media_prepare_layout"/>
+        <include
+            android:id="@+id/control_panel"
+            android:visibility="gone"
+            layout="@layout/music_toolbar_layout"/>
+        <include
+            android:id="@+id/loading_panel"
+            android:visibility="visible"
+            layout="@layout/music_loading_layout"/>
+    </RelativeLayout>
+</FrameLayout>

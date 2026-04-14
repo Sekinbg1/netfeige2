@@ -1,0 +1,480 @@
+> Task :clean UP-TO-DATE
+> Task :app:clean
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateDebugBuildConfig
+> Task :app:javaPreCompileDebug
+> Task :app:generateDebugResValues
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:checkDebugAarMetadata
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :app:processDebugJavaRes NO-SOURCE
+
+> Task :app:mergeDebugResources
+Resource merge completed: mergeDebugResources
+
+> Task :app:mergeDebugJavaResource
+> Task :app:checkDebugDuplicateClasses
+> Task :app:desugarDebugFileDependencies
+> Task :app:processDebugResources
+
+> Task :app:compileDebugJavaWithJavac
+警告: [options] 源值 8 已过时，将在未来发行版中删除
+警告: [options] 目标值 8 已过时，将在未来发行版中删除
+警告: [options] 要隐藏有关已过时选项的警告, 请使用 -Xlint:-options。
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\Device.java:175: 错误: 不兼容的类型: Device<DI,D,S>无法转换为D
+		Collection<D> devices = findEmbeddedDevices(this);
+		                                            ^
+  其中, DI,D,S是类型变量:
+    DI扩展已在类 Device中声明的DeviceIdentity
+    D扩展已在类 Device中声明的Device
+    S扩展已在类 Device中声明的Service
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\Device.java:180: 错误: 对于find(DeviceType,Device<DI,D,S>), 找不到合适的方法
+		Collection<D> devices = find(deviceType, this);
+		                        ^
+    方法 Device.find(UDN,D)不适用
+      (参数不匹配; DeviceType无法转换为UDN)
+    方法 Device.find(DeviceType,D)不适用
+      (参数不匹配; Device<DI,D,S>无法转换为D)
+    方法 Device.find(ServiceType,D)不适用
+      (参数不匹配; DeviceType无法转换为ServiceType)
+  其中, DI,D,S是类型变量:
+    DI扩展已在类 Device中声明的DeviceIdentity
+    D扩展已在类 Device中声明的Device
+    S扩展已在类 Device中声明的Service
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\Device.java:185: 错误: 对于find(ServiceType,Device<DI,D,S>), 找不到合适的方法
+		Collection<D> devices = find(serviceType, this);
+		                        ^
+    方法 Device.find(UDN,D)不适用
+      (参数不匹配; ServiceType无法转换为UDN)
+    方法 Device.find(DeviceType,D)不适用
+      (参数不匹配; ServiceType无法转换为DeviceType)
+    方法 Device.find(ServiceType,D)不适用
+      (参数不匹配; Device<DI,D,S>无法转换为D)
+  其中, DI,D,S是类型变量:
+    DI扩展已在类 Device中声明的DeviceIdentity
+    D扩展已在类 Device中声明的Device
+    S扩展已在类 Device中声明的Service
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\Device.java:203: 错误: 不兼容的类型: Device<DI,D,S>无法转换为D
+		Collection<S> services = findServices(null, null, this);
+		                                                  ^
+  其中, DI,D,S是类型变量:
+    DI扩展已在类 Device中声明的DeviceIdentity
+    D扩展已在类 Device中声明的Device
+    S扩展已在类 Device中声明的Service
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\Device.java:208: 错误: 不兼容的类型: Device<DI,D,S>无法转换为D
+		Collection<S> services = findServices(serviceType, null, this);
+		                                                         ^
+  其中, DI,D,S是类型变量:
+    DI扩展已在类 Device中声明的DeviceIdentity
+    D扩展已在类 Device中声明的Device
+    S扩展已在类 Device中声明的Service
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\Device.java:289: 错误: 不兼容的类型: Device<DI,D,S>无法转换为D
+		Collection<S> collectionFindServices = findServices(null, serviceId, this);
+		                                                                     ^
+  其中, DI,D,S是类型变量:
+    DI扩展已在类 Device中声明的DeviceIdentity
+    D扩展已在类 Device中声明的Device
+    S扩展已在类 Device中声明的Service
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\Device.java:297: 错误: 不兼容的类型: Device<DI,D,S>无法转换为D
+		Collection<S> collectionFindServices = findServices(serviceType, null, this);
+		                                                                       ^
+  其中, DI,D,S是类型变量:
+    DI扩展已在类 Device中声明的DeviceIdentity
+    D扩展已在类 Device中声明的Device
+    S扩展已在类 Device中声明的Service
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\Device.java:305: 错误: 不兼容的类型: Device<DI,D,S>无法转换为D
+		Collection<S> collectionFindServices = findServices(null, null, this);
+		                                                                ^
+  其中, DI,D,S是类型变量:
+    DI扩展已在类 Device中声明的DeviceIdentity
+    D扩展已在类 Device中声明的Device
+    S扩展已在类 Device中声明的Service
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\GifOpenHelper.java:322: 错误: 不兼容的类型: 从int转换到short可能会有损失
+                        s = i17;
+                            ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\GifOpenHelper.java:326: 错误: 不兼容的类型: 从int转换到short可能会有损失
+                        s = i5;
+                            ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\meta\LocalDevice.java:26: 错误: LocalDevice不是抽象的, 并且未覆盖Device中的抽象方法toServiceArray(Collection<LocalService>)
+public class LocalDevice extends Device<DeviceIdentity, LocalDevice, LocalService> {
+       ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\action\ActionException.java:33: 错误: 对this的调用必须是构造器中的第一个语句
+        this(code, str);
+            ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\action\ActionArgumentValue.java:19: 错误: 对super的调用必须是构造器中的第一个语句
+        super(datatype, obj);
+             ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\message\control\OutgoingActionRequestMessage.java:26: 错误: 对super的调用必须是构造器中的第一个语句
+        super(upnpRequest);
+             ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:124: 错误: 已在方法 writeFile(String,InputStream)中定义了变量 fileOutputStream
+                    Exception fileOutputStream = null;
+                              ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:125: 错误: 不兼容的类型: FileOutputStream无法转换为Exception
+                    fileOutputStream = fileOutputStream2;
+                                       ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:126: 错误: 找不到符号
+                    e = e2;
+                    ^
+  符号:   变量 e
+  位置: 类 FileHelper
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:127: 错误: 找不到符号
+                    e.printStackTrace();
+                    ^
+  符号:   变量 e
+  位置: 类 FileHelper
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:130: 错误: 找不到符号
+                            fileOutputStream.close();
+                                            ^
+  符号:   方法 close()
+  位置: 类型为Exception的变量 fileOutputStream
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:137: 错误: 已在方法 writeFile(String,InputStream)中定义了变量 fileOutputStream
+                    Exception fileOutputStream = null;
+                              ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:138: 错误: 不兼容的类型: FileOutputStream无法转换为Exception
+                    fileOutputStream = fileOutputStream2;
+                                       ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:142: 错误: 找不到符号
+                            fileOutputStream.close();
+                                            ^
+  符号:   方法 close()
+  位置: 类型为Exception的变量 fileOutputStream
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:385: 错误: 已在方法 writeFile(String,byte[])中定义了变量 e
+                    Exception e = null;
+                              ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:397: 错误: 已在方法 writeFile(String,byte[])中定义了变量 th
+                    Throwable th = null;
+                              ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:549: 错误: 已在方法 fileToZip(String,File,ZipOutputStream)中定义了变量 e
+                    Exception e = null;
+                              ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\geniusgithub\mediarender\util\FileHelper.java:561: 错误: 已在方法 fileToZip(String,File,ZipOutputStream)中定义了变量 th
+                    Throwable th = null;
+                              ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:210: 错误: 已在方法 getBackMessageLog()中定义了变量 cursor
+                        Exception cursor = null;
+                                  ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:211: 错误: 不兼容的类型: Cursor无法转换为Exception
+                        cursor = cursorRawQuery;
+                                 ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:212: 错误: 找不到符号
+                        cursor.close();
+                              ^
+  符号:   方法 close()
+  位置: 类型为Exception的变量 cursor
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:214: 错误: 已在方法 getBackMessageLog()中定义了变量 th
+                        Throwable th = null;
+                                  ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:302: 错误: 已在方法 insert(String,int,int,String)中定义了变量 z
+                Exception z = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:303: 错误: 不兼容的类型: boolean无法转换为Exception
+                z = false;
+                    ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:331: 错误: 已在方法 insertFolderPath(String,String)中定义了变量 z
+                Exception z = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:332: 错误: 不兼容的类型: boolean无法转换为Exception
+                z = false;
+                    ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:392: 错误: 已在方法 deleteHistoryFilesRecord(String)中定义了变量 th
+                Throwable th = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:428: 错误: 已在方法 insertHistoryFilesRecord(String)中定义了变量 z
+                Exception z = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:429: 错误: 不兼容的类型: boolean无法转换为Exception
+                z = false;
+                    ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:457: 错误: 已在方法 updateHistoryFilesRecord(String)中定义了变量 z
+                Exception z = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:458: 错误: 不兼容的类型: boolean无法转换为Exception
+                z = false;
+                    ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:543: 错误: 已在方法 updateHistoryFilesRecord(HistoryFiles,HistoryFiles)中定义了变量 sQLiteDatabase
+                    Exception sQLiteDatabase = null;
+                              ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:544: 错误: 不兼容的类型: SQLiteDatabase无法转换为Exception
+                    sQLiteDatabase = writableDatabase;
+                                     ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:546: 错误: 找不到符号
+                        sQLiteDatabase.endTransaction();
+                                      ^
+  符号:   方法 endTransaction()
+  位置: 类型为Exception的变量 sQLiteDatabase
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:549: 错误: 已在方法 updateHistoryFilesRecord(HistoryFiles,HistoryFiles)中定义了变量 th
+                    Throwable th = null;
+                              ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:592: 错误: 已在方法 insertShareFilesRecord(ArrayList<ShareFiles>)中定义了变量 th
+                Throwable th = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:614: 错误: 已在方法 insertShareFilesRecord(ArrayList<ShareFiles>)中定义了变量 sQLiteDatabase
+                Exception sQLiteDatabase = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:615: 错误: 不兼容的类型: SQLiteDatabase无法转换为Exception
+                sQLiteDatabase = writableDatabase;
+                                 ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:617: 错误: 找不到符号
+                    sQLiteDatabase.endTransaction();
+                                  ^
+  符号:   方法 endTransaction()
+  位置: 类型为Exception的变量 sQLiteDatabase
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:664: 错误: 已在方法 deleteShareFilesRecord(String,String[])中定义了变量 th
+                Throwable th = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:714: 错误: 已在方法 insertSharePasswordRecord(SharePassword)中定义了变量 th
+                Throwable th = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:726: 错误: 已在方法 insertSharePasswordRecord(SharePassword)中定义了变量 sQLiteDatabase
+                Exception sQLiteDatabase = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:727: 错误: 不兼容的类型: SQLiteDatabase无法转换为Exception
+                sQLiteDatabase = writableDatabase;
+                                 ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:730: 错误: 找不到符号
+                    sQLiteDatabase.endTransaction();
+                                  ^
+  符号:   方法 endTransaction()
+  位置: 类型为Exception的变量 sQLiteDatabase
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:756: 错误: 已在方法 updateSharePasswordRecord(SharePassword)中定义了变量 th
+                Throwable th = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:768: 错误: 已在方法 updateSharePasswordRecord(SharePassword)中定义了变量 sQLiteDatabase
+                Exception sQLiteDatabase = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:769: 错误: 不兼容的类型: SQLiteDatabase无法转换为Exception
+                sQLiteDatabase = writableDatabase;
+                                 ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:771: 错误: 找不到符号
+                    sQLiteDatabase.endTransaction();
+                                  ^
+  符号:   方法 endTransaction()
+  位置: 类型为Exception的变量 sQLiteDatabase
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:800: 错误: 已在方法 insertDataRecord(String,String,ContentValues)中定义了变量 z
+                Exception z = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:801: 错误: 不兼容的类型: boolean无法转换为Exception
+                z = false;
+                    ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\DBHelper.java:847: 错误: 已在方法 deleteDataRecord(String,String,String[])中定义了变量 th
+                Throwable th = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\Public_Tools.java:643: 错误: 找不到符号
+				inputStreamOpenRawResource.close();
+				^
+  符号:   变量 inputStreamOpenRawResource
+  位置: 类 Public_Tools
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\common\Public_Tools.java:644: 错误: 不兼容的类型: 意外的返回值
+				return bArr2;
+				       ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\FileListView.java:1132: 错误: 找不到符号
+            if (f >= iArr[0] && f <= r4.getWidth() + iArr[0] && f2 >= iArr[1] && f2 <= r4.getHeight() + iArr[1]) {
+                                     ^
+  符号:   变量 r4
+  位置: 类 FileListView
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\FileListView.java:1132: 错误: 找不到符号
+            if (f >= iArr[0] && f <= r4.getWidth() + iArr[0] && f2 >= iArr[1] && f2 <= r4.getHeight() + iArr[1]) {
+                                                                                       ^
+  符号:   变量 r4
+  位置: 类 FileListView
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\ChoiceListView.java:514: 错误: 找不到符号
+            if (f >= iArr[0] && f <= r4.getWidth() + iArr[0] && f2 >= iArr[1] && f2 <= r4.getHeight() + iArr[1]) {
+                                     ^
+  符号:   变量 r4
+  位置: 类 ChoiceListView
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\ChoiceListView.java:514: 错误: 找不到符号
+            if (f >= iArr[0] && f <= r4.getWidth() + iArr[0] && f2 >= iArr[1] && f2 <= r4.getHeight() + iArr[1]) {
+                                                                                       ^
+  符号:   变量 r4
+  位置: 类 ChoiceListView
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\FileActivity.java:109: 错误: FileActivity中的onCreate(Bundle)无法覆盖Activity中的onCreate(Bundle)
+    protected void onCreate(Bundle bundle) throws Throwable {
+                   ^
+  被覆盖的方法未抛出Throwable
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\FileActivity.java:596: 错误: multi-catch 语句中的替代无法通过子类化关联
+        } catch (NullPointerException | Exception unused) {
+                                        ^
+  替代NullPointerException是替代Exception的子类
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\data\FileAdapter.java:154: 错误: 不兼容的类型: FileAdapter.viewHolder2无法转换为FileAdapter.viewHolder3
+            viewholder3 = viewholder2;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\data\CategoryAdpter.java:163: 错误: <匿名com.netfeige.display.data.CategoryAdpter$6>中的onClick(View)无法实现OnClickListener中的onClick(View)
+            public void onClick(View view2) throws Throwable {
+                        ^
+  被覆盖的方法未抛出Throwable
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\IpmsgActivity.java:288: 错误: <匿名com.netfeige.display.ui.IpmsgActivity$5>中的handleMessage(Message)无法覆盖Handler中的handleMessage(Message)
+        public void handleMessage(Message message) throws Throwable {
+                    ^
+  被覆盖的方法未抛出Throwable
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\AlbumImageView.java:84: 错误: 已在方法 setSrc(String)中定义了变量 e
+                Exception e = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\AlbumImageView.java:232: 错误: 找不到符号
+        return Math.max(r0.getWidth() / this.m_nThisWidth, this.m_bitmapImage.getHeight() / this.m_nThisHeight) * 4.0f;
+                        ^
+  符号:   变量 r0
+  位置: 类 AlbumImageView
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\dlna\HttpServer.java:156: 错误: HttpServer.HTTPSession中的run()无法实现Runnable中的run()
+        public void run() throws InterruptedException {
+                    ^
+  被覆盖的方法未抛出InterruptedException
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\dlna\HttpServer.java:366: 错误: 找不到符号
+                            properties2.put(strSubstring, saveTmpFile(bArr, stripMultipartHeaders(bArr, boundaryPositions[i - 2]), (boundaryPositions[i - 1] - r5) - 4));
+                                                                                                                                                               ^
+  符号:   变量 r5
+  位置: 类 HttpServer.HTTPSession
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\DiscussChatActivity.java:399: 错误: 找不到符号
+            intent.putExtra(a.a, 1);
+                            ^
+  符号:   变量 a
+  位置: 类 DiscussChatActivity.PopUpWindowSetupOnClickListener
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\GifView.java:23: 错误: 对super的调用必须是构造器中的第一个语句
+        super(context, attributeSet);
+             ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\GifView.java:46: 错误: 已在方法 setSrc(String)中定义了变量 e
+                Exception e = null;
+                          ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\display\ui\NewDiscussActivity.java:52: 错误: 找不到符号
+        this.type = getIntent().getIntExtra(a.a, 0);
+                                            ^
+  符号:   变量 a
+  位置: 类 NewDiscussActivity
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\filemanager\FileManager.java:678: 错误: multi-catch 语句中的替代无法通过子类化关联
+            } catch (IOException | Exception unused) {
+                                   ^
+  替代IOException是替代Exception的子类
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\protocol\Protocol.java:825: 错误: 找不到符号
+					byteBufferAllocate.put(dn.l);
+					                       ^
+  符号: 变量 dn
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\protocol\UILopperFreighter.java:301: 错误: 不兼容的类型: HashMap<String,Object>无法转换为CAP#1
+        arrayList.add(map);
+                      ^
+  其中, CAP#1是新类型变量:
+    CAP#1从? extends Parcelable的捕获扩展Parcelable
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\protocol\UILopperFreighter.java:313: 错误: 不兼容的类型: HashMap<String,Object>无法转换为CAP#1
+        arrayList.add(map);
+                      ^
+  其中, CAP#1是新类型变量:
+    CAP#1从? extends Parcelable的捕获扩展Parcelable
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\protocol\SimpleCrypto.java:93: 错误: 找不到符号
+        stringBuffer.append(HEX.charAt(b & dn.m));
+                                           ^
+  符号:   变量 dn
+  位置: 类 SimpleCrypto
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\service\MusicService.java:144: 错误: 找不到符号
+                e = e3;
+                ^
+  符号:   变量 e
+  位置: 类 MusicService
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\service\MusicService.java:145: 错误: 找不到符号
+                e.printStackTrace();
+                ^
+  符号:   变量 e
+  位置: 类 MusicService
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\service\MusicService.java:147: 错误: 找不到符号
+                e = e4;
+                ^
+  符号:   变量 e
+  位置: 类 MusicService
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\service\MusicService.java:148: 错误: 找不到符号
+                e.printStackTrace();
+                ^
+  符号:   变量 e
+  位置: 类 MusicService
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\service\MusicService.java:151: 错误: 找不到符号
+            e = e5;
+            ^
+  符号:   变量 e
+  位置: 类 MusicService
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\service\MusicService.java:154: 错误: 找不到符号
+            e = e6;
+            ^
+  符号:   变量 e
+  位置: 类 MusicService
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\transport\TransFile.java:203: 错误: 找不到符号
+				if (PlaybackStateCompat.ACTION_SET_REPEAT_MODE > fileInformation.size - this.m_nMainFileInfo.startPos) {
+				    ^
+  符号:   变量 PlaybackStateCompat
+  位置: 类 TransFile.FileRecvThread
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\com\netfeige\transport\FileTransManager.java:190: 错误: 需要包含TransFile.FileSendThread的封闭实例
+            new TransFile.FileSendThread(transFile, socket, j, j2, j3, hostInformation).start();
+            ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\binding\xml\UDA10DeviceDescriptorBinderSAXImpl.java:68: 错误: 找不到符号
+            if (AnonymousClass1.$SwitchMap$org$teleal$cling$binding$xml$Descriptor$Device$ELEMENT[element.ordinal()] != 1) {
+                ^
+  符号:   变量 AnonymousClass1
+  位置: 类 RootHandler
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\binding\xml\UDA10DeviceDescriptorBinderSAXImpl.java:88: 错误: 找不到符号
+            int i = AnonymousClass1.$SwitchMap$org$teleal$cling$binding$xml$Descriptor$Device$ELEMENT[element.ordinal()];
+                    ^
+  符号:   变量 AnonymousClass1
+  位置: 类 SpecVersionHandler
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\binding\xml\UDA10ServiceDescriptorBinderSAXImpl.java:108: 错误: 找不到符号
+            if (AnonymousClass1.$SwitchMap$org$teleal$cling$binding$xml$Descriptor$Service$ELEMENT[element.ordinal()] != 1) {
+                ^
+  符号:   变量 AnonymousClass1
+  位置: 类 ActionHandler
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\binding\xml\UDA10ServiceDescriptorBinderSAXImpl.java:151: 错误: 找不到符号
+            int i = AnonymousClass1.$SwitchMap$org$teleal$cling$binding$xml$Descriptor$Service$ELEMENT[element.ordinal()];
+                    ^
+  符号:   变量 AnonymousClass1
+  位置: 类 ActionArgumentHandler
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\binding\xml\UDA10ServiceDescriptorBinderSAXImpl.java:221: 错误: 找不到符号
+            int i = AnonymousClass1.$SwitchMap$org$teleal$cling$binding$xml$Descriptor$Service$ELEMENT[element.ordinal()];
+                    ^
+  符号:   变量 AnonymousClass1
+  位置: 类 StateVariableHandler
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\binding\xml\UDA10ServiceDescriptorBinderSAXImpl.java:253: 错误: 找不到符号
+            if (AnonymousClass1.$SwitchMap$org$teleal$cling$binding$xml$Descriptor$Service$ELEMENT[element.ordinal()] != 7) {
+                ^
+  符号:   变量 AnonymousClass1
+  位置: 类 AllowedValueListHandler
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\XMLUtil.java:68: 错误: 不兼容的类型: Object无法转换为Entry
+            for (Map.Entry entry : map.entrySet()) {
+                                               ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\model\XMLUtil.java:74: 错误: 不兼容的类型: Object无法转换为String
+                set.add(entry.getKey());
+                                    ^
+F:\Documents\AndroidStudioProjects\netfeige2\app\src\main\java\org\teleal\cling\protocol\RetrieveRemoteDescriptors.java:89: 错误: 找不到符号
+            e = e2;
+            ^
+  符号:   变量 e
+  位置: 类 RetrieveRemoteDescriptors
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些输入文件使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+注: 某些消息已经过简化; 请使用 -Xdiags:verbose 重新编译以获得完整输出
+100 个错误
+3 个警告
+仅显示前 100 个错误（共 241 个）；若要查看更多错误，请使用 -Xmaxerrs
+
+> Task :app:compileDebugJavaWithJavac FAILED
+> Task :app:mergeExtDexDebug
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugJavaWithJavac'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+BUILD FAILED in 45s
+22 actionable tasks: 21 executed, 1 up-to-date

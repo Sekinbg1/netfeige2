@@ -1,0 +1,15 @@
+package org.teleal.cling.model.message;
+
+/* JADX INFO: loaded from: classes.dex */
+public abstract class UpnpOperation {
+    private int httpMinorVersion = 1;
+
+    public int getHttpMinorVersion() {
+        return this.httpMinorVersion;
+    }
+
+    public void setHttpMinorVersion(int i) {
+        this.httpMinorVersion = i;
+    }
+}
+

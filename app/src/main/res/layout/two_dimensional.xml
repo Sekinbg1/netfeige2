@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/layout_top">
+        <Button
+            android:id="@+id/back_btn"
+            android:background="@drawable/x_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"/>
+        <TextView
+            android:text="@string/two_dimensional"
+            android:layout_centerInParent="true"
+            style="@style/textview_large"/>
+    </RelativeLayout>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/two_dimensional"/>
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:autoLink="web"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/two_dimensional_text"
+        android:lineSpacingExtra="3dp"/>
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/layout_top">
+        <Button
+            android:id="@+id/back_btn_help"
+            android:background="@drawable/x_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"/>
+        <TextView
+            android:text="@string/help_explain"
+            android:layout_centerInParent="true"
+            style="@style/textview_large"/>
+    </RelativeLayout>
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_weight="1"
+        style="@style/scrollview_margin">
+        <ImageView
+            android:id="@+id/imageview_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/helppage"
+            android:adjustViewBounds="true"/>
+    </ScrollView>
+</LinearLayout>

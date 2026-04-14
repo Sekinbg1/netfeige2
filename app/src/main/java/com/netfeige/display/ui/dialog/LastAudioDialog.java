@@ -1,0 +1,54 @@
+package com.netfeige.display.ui.dialog;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import com.netfeige.R;
+import com.netfeige.display.ui.PlayMusicActivity;
+import com.netfeige.display.ui.PlayVideoActivity;
+
+/* JADX INFO: loaded from: classes.dex */
+public class LastAudioDialog extends Dialog {
+    private Button m_btnConfirm;
+    private Context m_context;
+    private LayoutInflater m_inflater;
+    private View m_viewParent;
+
+    public LastAudioDialog(Context context) {
+        super(context, R.style.sort_dialog);
+        this.m_inflater = null;
+        this.m_context = context;
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService("layout_inflater");
+        this.m_inflater = layoutInflater;
+        View viewInflate = layoutInflater.inflate(R.layout.lastimagedialog, (ViewGroup) null);
+        this.m_viewParent = viewInflate;
+        setContentView(viewInflate);
+        setCancelable(false);
+        initControl(context, this.m_viewParent);
+    }
+
+    private void initControl(Context context, View view) {
+        Button button = (Button) view.findViewById(R.id.btn_deleteconfirm);
+        this.m_btnConfirm = button;
+        button.setOnClickListener(new ComfirmClickListener());
+    }
+
+    private class ComfirmClickListener implements View.OnClickListener {
+        private ComfirmClickListener() {
+        }
+
+        @Override // android.view.View.OnClickListener
+        public void onClick(View view) {
+            LastAudioDialog.this.dismiss();
+            if (LastAudioDialog.this.m_context instanceof PlayMusicActivity) {
+                ((PlayMusicActivity) LastAudioDialog.this.m_context).onBackPressed();
+            } else if (LastAudioDialog.this.m_context instanceof PlayVideoActivity) {
+                ((PlayVideoActivity) LastAudioDialog.this.m_context).onBackPressed();
+            }
+        }
+    }
+}
+

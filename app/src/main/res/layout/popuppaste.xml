@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:id="@+id/linearl_popuppaste"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:gravity="center"
+        android:id="@+id/btn_paste"
+        android:background="@drawable/x_paste"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fengexian"/>
+    <Button
+        android:gravity="center"
+        android:id="@+id/btn_cancel"
+        android:background="@drawable/x_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+</LinearLayout>

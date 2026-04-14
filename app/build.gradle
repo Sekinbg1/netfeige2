@@ -1,0 +1,149 @@
+apply plugin: 'com.android.application'
+
+android {
+	namespace "com.netfeige2"
+	compileSdkVersion 34
+
+	defaultConfig {
+		applicationId 'com.netfeige2'
+		minSdkVersion 21
+		targetSdkVersion 34
+		versionCode 50
+		versionName "6.1.200622"
+		vectorDrawables.useSupportLibrary = true
+
+		ndk.abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+		
+		aaptOptions {
+			noCompress 'xml'
+			additionalParameters '--no-version-vectors'
+			cruncherEnabled = false
+		}
+	}
+
+	// 处理资源重复问题
+	packagingOptions {
+		resources {
+			excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE', 'META-INF/LICENSE.txt', 'META-INF/license.txt', 'META-INF/NOTICE', 'META-INF/NOTICE.txt', 'META-INF/notice.txt', 'META-INF/ASL2.0']
+		}
+	}
+	
+	// 允许资源重复，使用项目的定义
+	androidResources {
+		noCompress 'xml'
+	}
+
+	packagingOptions {
+		resources {
+			excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE', 'META-INF/LICENSE.txt', 'META-INF/license.txt', 'META-INF/NOTICE', 'META-INF/NOTICE.txt', 'META-INF/notice.txt', 'META-INF/ASL2.0']
+		}
+	}
+
+	sourceSets {
+		main {jniLibs.srcDirs = ['libs']}
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+
+	tasks.withType(com.android.build.gradle.tasks.MergeResources) {
+		task -> task.doLast {
+			println "Resource merge completed: ${task.name}"
+		}
+	}
+
+	buildFeatures {buildConfig = true}
+
+	useLibrary 'org.apache.http.legacy'
+
+	lint {
+		abortOnError false
+		checkReleaseBuilds false
+	}
+}
+
+task copyAndroidNatives {
+	doFirst {
+		file("libs/armeabi").mkdirs()
+		file("libs/armeabi-v7a").mkdirs()
+		file("libs/arm64-v8a").mkdirs()
+		file("libs/x86").mkdirs()
+		file("libs/x86_64").mkdirs()
+		file("libs/mips").mkdirs()
+		file("libs/mips64").mkdirs()
+
+		configurations.natives.copy().files.each { jar ->
+			def outputDir = null
+			if (jar.name.endsWith("natives-armeabi.jar")) {outputDir = file("libs/armeabi")}
+			if (jar.name.endsWith("natives-armeabi-v7a.jar")) {outputDir = file("libs/armeabi-v7a")}
+			if (jar.name.endsWith("natives-arm64-v8a.jar")) {outputDir = file("libs/arm64-v8a")}
+			if (jar.name.endsWith("natives-x86.jar")) {outputDir = file("libs/x86")}
+			if (jar.name.endsWith("natives-x86_64.jar")) {outputDir = file("libs/x86_64")}
+			if (jar.name.endsWith("natives-mips.jar")) {outputDir = file("libs/mips")}
+			if (jar.name.endsWith("natives-mips64.jar")) {outputDir = file("libs/mips64")}
+			if (outputDir != null) {
+				copy {
+					from zipTree(jar)
+					into outputDir
+					include "*.so"
+				}
+			}
+		}
+	}
+}
+
+tasks.whenTaskAdded { packageTask ->
+	if (packageTask.name.contains("merge") && packageTask.name.contains("JniLibFolders")) {
+		packageTask.dependsOn 'copyAndroidNatives'
+	}
+}
+
+task run(type: Exec) {
+	def path
+	def localProperties = project.file("../local.properties")
+	if (localProperties.exists()) {
+		def properties = [:]
+		localProperties.eachLine { line ->
+			def (key, value) = line.tokenize('=')
+			if (key && value) {
+				properties[key.trim()] = value.trim()
+			}
+		}
+		def sdkDir = properties['sdk.dir']
+		if (sdkDir) {path = sdkDir}
+		else {path = "$System.env.ANDROID_HOME"}
+	}
+	else {path = "$System.env.ANDROID_HOME"}
+
+	def adb = path + "/platform-tools/adb"
+	commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.netfeige2/com.netfeige2.AndroidLauncher'
+}
+
+dependencies {
+	// TODO: dependencies
+	implementation 'androidx.appcompat:appcompat:1.6.1'
+	implementation 'com.google.android.material:material:1.9.0'
+	implementation 'androidx.core:core:1.10.1'
+	implementation 'androidx.media:media:1.6.0'
+
+	// 统一 Kotlin 版本为 1.8.10
+	implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10'
+	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10'
+	
+	// javax.servlet API - 用于 org.teleal.common.http 包
+	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+	
+	// Apache HttpClient (已在 Android SDK 中通过 useLibrary 提供)
+	// useLibrary 'org.apache.http.legacy' 已在 android 块中配置
+}
